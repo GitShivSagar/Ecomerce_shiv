@@ -1,7 +1,7 @@
 import customerModal from "../Modals/customerModal.js";
 import productModal from "../Modals/productModal.js";
 import dotenv from 'dotenv'
-dotenv.config({path:"./config/config.env"})
+dotenv.config({path:"./.env"})
 
 
 

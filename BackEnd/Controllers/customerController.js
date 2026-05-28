@@ -8,7 +8,7 @@ import orderModal from "../Modals/orderModal.js";
 import customerModal from "../Modals/customerModal.js";
 import Payment from "../Modals/paymentModal.js";
 import documentModal from "../Modals/documentModal.js";
-dotenv.config({ path: "./config/config.env" })
+dotenv.config({ path: "./.env" })
 
 
 class customerController {

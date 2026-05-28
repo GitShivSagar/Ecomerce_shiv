@@ -6,7 +6,7 @@ import dbConnect from './dbConnect/dbConnect.js'
 import cors from 'cors'
 // import bcrypt from 'bcrypt'
 import dotenv from 'dotenv'
-dotenv.config({path:"./config/config.env"})
+dotenv.config({path:"./.env"})
 
 
 const server=express()

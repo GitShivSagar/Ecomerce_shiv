@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 import productModal from "../Modals/productModal.js"
 import transporter from "../utility/nodemailer.js"
-dotenv.config({ path: "./config/config.env" })
+dotenv.config({ path: "./.env" })
 
 class indexController {
     static register = async (req, res) => {
