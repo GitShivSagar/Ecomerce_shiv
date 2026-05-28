@@ -29,7 +29,7 @@ server.use("/uploaddocuments",express.static('uploaddocuments'))
 CORS or Cross-Origin Resource Sharing in Node. js is a mechanism by which a front-end client can make requests for resources to an external back-end server. The single-origin policy does not allow cross-origin requests and CORS headers are required to bypass this feature.
 */
 const corsOptions ={
-    origin:'http://localhost:3000',
+    origin:process.env.Frontend_URL,
     credentials:true
 }
  
@@ -38,7 +38,7 @@ server.use(cors(corsOptions));
 server.use(function (req, res, next) {
  
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Origin', process.env.Frontend_URL || "http://localhost:3000");
  
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
