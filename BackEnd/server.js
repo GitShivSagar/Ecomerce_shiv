@@ -1,6 +1,6 @@
 import Razorpay from 'razorpay'
 import dotenv from 'dotenv'
-dotenv.config({path:"./config/config.env"})
+dotenv.config({path:"./.env"})
 
 
 var  instance=new Razorpay({
