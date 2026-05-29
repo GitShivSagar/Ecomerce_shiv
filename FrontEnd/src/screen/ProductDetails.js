@@ -14,23 +14,23 @@ const ProductDetails = () => {
 	const [pdetails, setpdetails] = useState({})
 	const { pid } = useParams()
 
-	const getProductDetails = () => {
-		axios.get(PRODUCT_DETAILS + pid)
-			.then((response) => {
-				console.log(response)
-				setpdetails(response.data.productdetails)
-				const { product_size, product_color } = response.data.productdetails
-				setsizeArr(product_size.split(","))
-				setcolorArr(product_color.split(","))
-			})
-			.catch((err) => {
-				console.log(err)
-			})
-	}
-
 	useEffect(() => {
+		const getProductDetails = () => {
+			axios.get(PRODUCT_DETAILS + pid)
+				.then((response) => {
+					console.log(response)
+					setpdetails(response.data.productdetails)
+					const { product_size, product_color } = response.data.productdetails
+					setsizeArr(product_size.split(","))
+					setcolorArr(product_color.split(","))
+				})
+				.catch((err) => {
+					console.log(err)
+				})
+		}
+
 		getProductDetails()
-	}, [])
+	}, [pid])
 
 
 	const increment = () => {
@@ -158,22 +158,22 @@ const ProductDetails = () => {
 								</div>
 								<div className="flex-w flex-m p-l-100 p-t-40 respon7">
 									<div className="flex-m bor9 p-r-10 m-r-11">
-										<a href="#" className="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Add to Wishlist">
+										<button type="button" className="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100 border-0 bg-transparent" data-tooltip="Add to Wishlist" aria-label="Add to Wishlist">
 											<i className="zmdi zmdi-favorite"></i>
-										</a>
+										</button>
 									</div>
 
-									<a href="#" className="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
+									<button type="button" className="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100 border-0 bg-transparent" data-tooltip="Facebook" aria-label="Facebook">
 										<i className="fa fa-facebook"></i>
-									</a>
+									</button>
 
-									<a href="#" className="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+									<button type="button" className="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100 border-0 bg-transparent" data-tooltip="Twitter" aria-label="Twitter">
 										<i className="fa fa-twitter"></i>
-									</a>
+									</button>
 
-									<a href="#" className="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
+									<button type="button" className="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100 border-0 bg-transparent" data-tooltip="Google Plus" aria-label="Google Plus">
 										<i className="fa fa-google-plus"></i>
-									</a>
+									</button>
 								</div>
 							</div>
 						</div>

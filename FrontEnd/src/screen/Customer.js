@@ -58,10 +58,10 @@ const Customer = () => {
                                     </div>
 
                                     <div className="block2-txt-child2 flex-r p-t-3">
-                                        <a href="#" className="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                        <button type="button" className="btn-addwish-b2 dis-block pos-relative js-addwish-b2 border-0 bg-transparent p-0">
                                             <img className="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON" />
                                             <img className="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON" />
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

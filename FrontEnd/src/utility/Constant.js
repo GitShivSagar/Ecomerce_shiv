@@ -1,4 +1,6 @@
-const BASE_URL='http://localhost:5000/'
+
+const BASE_URL=process.env.REACT_APP_API_URL
+
 export const PRODUCTS=BASE_URL+'products'
 export const PRODUCT_DETAILS=BASE_URL+'productdetails?pid='
 export const LOGIN=BASE_URL+'login'

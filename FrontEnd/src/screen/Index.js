@@ -55,7 +55,7 @@ const Index = () => {
         console.log("catname",catname)
         const categoryString=catname.join(',')//The join() method in JavaScript is a built-in Array.prototype method used to convert all elements of an array into a single string. It returns a new string, leaving the original array unchanged. Syntax:array.join([separator])
         console.log('categoryString',categoryString)
-        if(categoryString!=""){
+        if(categoryString !== ""){
             var url=`${PRODUCT_FILTER}?product_category=${categoryString}`// Previous path:==   PRODUCT_FILTER + categoryString
             console.log("url",url)
             axios.get(url)
@@ -188,10 +188,10 @@ const Index = () => {
                                     </div>
 
                                     <div className="block2-txt-child2 flex-r p-t-3">
-                                        <a href="#" className="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                        <button type="button" className="btn-addwish-b2 dis-block pos-relative js-addwish-b2 border-0 bg-transparent p-0">
                                             <img className="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON" />
                                             <img className="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON" />
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

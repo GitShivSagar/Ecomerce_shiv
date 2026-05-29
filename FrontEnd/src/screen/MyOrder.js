@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React from 'react'
 import { useEffect,useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { ORDERLIST } from '../utility/Constant'
 import Footer from '../controller/Footer'
 import Header from '../controller/Header'
@@ -9,7 +8,6 @@ import { Link } from 'react-router-dom'
 
 
 const MyOrder = () => {
-    const navigate=useNavigate()
     const [orderlist,setorderlist]=useState([])
     
     useEffect(()=>{
@@ -26,7 +24,7 @@ const MyOrder = () => {
   return (
     <div>
       <Header />
-            <h1 style={{marginTop:60}}></h1>
+            <div style={{marginTop:60}}></div>
             <div id="wrapper"
                 className="container ">
                 <div className="row">
@@ -54,6 +52,7 @@ const MyOrder = () => {
                                             <td>{order.product_description}</td>
                                             <td>
                                                 <img src={order.product_imageurl}
+                                                    alt={order.product_brand}
                                                     style={{ width: 100, height: 100 }}
                                                 />
                                             </td>

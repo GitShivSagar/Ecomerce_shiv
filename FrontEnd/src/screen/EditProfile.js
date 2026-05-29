@@ -20,7 +20,6 @@ const EditProfile = () => {
     const [city,setcity]=useState("")
     const [pincode,setpincode]=useState("")
     const [role,setrole]=useState("")
-    const [customerdetails,setcustomerdetails]=useState({})
 
     useEffect(()=>{
         getCustomerProfile()
@@ -33,7 +32,6 @@ const EditProfile = () => {
         axios.get(PROFILE+c_id)
         .then((response)=>{
             console.log(response.data.record)
-            setcustomerdetails(response.data.record)
             const {name,city,address,state,pincode,mobile,gender,role}=response.data.record
             setname(name)
             setaddress(address)

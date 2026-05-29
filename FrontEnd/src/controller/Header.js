@@ -1,8 +1,8 @@
-import React, { useState, useEffect, } from 'react'
+import React from 'react'
 import {
-  Navbar, Nav, Container, NavDropdown, Badge, Form, FormControl, Button
+  Navbar, Nav, Container, Badge
 } from 'react-bootstrap';
-import { FaShoppingCart, FaUser, FaUserPlus, FaSignOutAlt,FaHome,FaInfoCircle,FaEye } from 'react-icons/fa';
+import { FaShoppingCart, FaUser, FaUserPlus, FaSignOutAlt,FaHome,FaInfoCircle } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -11,7 +11,6 @@ import { useSelector } from 'react-redux'
 
 const Header = () => {
 
-  const [header, setheader] = useState()
   const count = useSelector((state) => state.notification.count);
 
 
@@ -35,12 +34,11 @@ const Header = () => {
   }
 
 
-  useEffect(() => {
-    const token = localStorage.getItem('token')
-    const role = localStorage.getItem('role')
-    if (role === "admin" && token != null) {
+  const token = localStorage.getItem('token')
+  const role = localStorage.getItem('role')
+  if (role === "admin" && token !== null) {
 
-      setheader(<div>
+      return (<div>
         <Navbar expand="lg"
           // className="bg-body-tertiary"
           style={headerStyle}>
@@ -118,8 +116,8 @@ const Header = () => {
         </Navbar>
       </div>)
     }
-    else if (role === "customer" && token != null) {
-      setheader(<div>
+    else if (role === "customer" && token !== null) {
+      return (<div>
         <Navbar expand="lg"
           // className="bg-body-tertiary"
           style={headerStyle}>
@@ -218,7 +216,7 @@ const Header = () => {
     } 
     
     else {
-      setheader(<div>
+      return (<div>
         <Navbar expand="lg"
           // className="bg-body-tertiary"
           style={headerStyle}>
@@ -296,9 +294,6 @@ const Header = () => {
         </Navbar>
       </div>)
     }
-  }, [])
-
-  return header
 }
 
 export default Header

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { ADDTOCART, CARTDETAILS, DELETECART } from '../utility/Constant'
 import Header from '../controller/Header'
 import { useDispatch } from 'react-redux'
-import { decrease, setCount } from '../utility/store'
+import { decrease } from '../utility/store'
 
 const Cart = () => {
   let dispatch = useDispatch()

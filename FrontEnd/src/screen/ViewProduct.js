@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { DELETEPRODUCT, PRODUCTS } from '../utility/Constant'
 import Footer from '../controller/Footer'
 import Header from '../controller/Header'
@@ -8,7 +8,7 @@ import Header from '../controller/Header'
 
 const ViewProduct = () => {
     let navigate=useNavigate()
-    const [pdetails,setpdetails]=useState({})
+    const [pdetails,setpdetails]=useState([])
 
     useEffect(()=>{
         getProductDetails()
@@ -43,7 +43,7 @@ const ViewProduct = () => {
   return (
     <div>
       <Header />
-            <h1 style={{ marginTop: 60 }}></h1>
+            <div style={{ marginTop: 60 }}></div>
             {pdetails.length > 0 ?
                 <div className="col-lg-12 col-xl-12 m-b-50">
                     <div className="wrap-table-shopping-cart">

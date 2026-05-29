@@ -25,7 +25,7 @@ const ManageCustomer = () => {
     }
 
     const handleManageCustomer=(cid,s)=>{
-        if(s==1){
+        if(s === 1){
             let url=MANAGECUSTOMER+cid+"&s=block"
             console.log(url)
             axios.put(url)
@@ -37,7 +37,7 @@ const ManageCustomer = () => {
                 console.log(err)
             })
         }
-        else if(s==0){
+        else if(s === 0){
             let url=MANAGECUSTOMER+cid+"&s=verify"
             console.log(url)
             axios.put(url)

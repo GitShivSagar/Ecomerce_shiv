@@ -8,14 +8,14 @@ const Logout = () => {
 
     useEffect(()=>{
         const token=localStorage.getItem("token")
-        if(token!=null){
+        if(token !== null){
             localStorage.removeItem('token')
             localStorage.removeItem('role')
             localStorage.removeItem('email')
             localStorage.removeItem('id')
             navigate("/login")
         }
-    },[])
+    },[navigate])
   return (
     <div>
       
