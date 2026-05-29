@@ -10,7 +10,7 @@ dotenv.config({path:"./.env"})
 
 
 const server=express()
-const PORTNO=process.env.PORT_NO || 4000
+const PORTNO=process.env.PORT || process.env.PORT_NO || 4000
 
 dbConnect(process.env.DB_URL,process.env.DB_NAME)
 
